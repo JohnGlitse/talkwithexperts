@@ -1,0 +1,1242 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style-type: none;
+}
+
+html{
+	scroll-behavior: smooth;
+	transition: 2s;
+}
+html, body{
+	max-width: 100%;
+	overflow-x: hidden;
+}
+ p{
+	font-size: 18px;
+	line-height: 26px;
+}
+body h1{
+	color: var(--primary-color);
+	font-family: Imprint MT Shadow;
+	position: relative;
+	padding: 10px;
+}
+body h1::before{
+	content: "";
+	background: var(--accent-color);
+	position: absolute;
+	width: 6rem;
+	height: 5px;
+	bottom: 0;
+/*	left: 50%;
+	transform: translate(-50%);*/
+}
+body h3{position: relative; padding: 10px}
+
+body h3::before{
+	content: "";
+	background: var(--accent-color);
+	position: absolute;
+	width: 3rem;
+	height: 3px;
+	bottom: 0;
+}
+
+:root{
+	--primary-color: #fff;
+	--secondary-color: #04091e;
+	--accent-color: #002e63;
+
+    --text-color: #fff;
+    --black-color: #000;
+	--opaque-dark-2: rgba(4, 9, 30, 0.2);
+	--text-font: Rockwell;
+}
+
+.switch-color{
+	--primary-color: #efefef;
+	--secondary-color: #262626;
+	--accent-color: #ddd2a5;
+	/*--vs-color-1: red;*/
+	--text-color: #fff;
+	--opaque-dark-2: rgba(4, 9, 30, 0.2);
+}
+
+		/*---------------------------------------------------------
+		THIS SECTION OF THE STYLESHEET STYLES THE HERO IMAGES 
+		----------------------------------------------------------*/  
+.hero{
+	width: 100%;
+	height: 120dvh;
+	background: linear-gradient(rgba(4, 9, 30, 0.4), rgba(4, 9, 30, 0.4));
+}
+.hero-image1, .hero-image2, .hero-image3, .hero-image4{
+	width: 100%;
+	height: 120vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	clip-path: inset(0);
+}
+.hero img{
+	width: 105%;
+	height: 100%;
+	position: fixed;
+	animation: zoom-out 3s linear infinite;
+}
+
+@media screen and (max-width: 1024px){
+	.hero{
+		height: 100dvh;
+	}
+	.hero-image1, .hero-image2, .hero-image3, .hero-image4{
+		height: 100vh;
+	}
+	.hero img{
+		height: 100vh;
+	}
+}
+@media screen and (max-width: 889px) and (min-width: 600px){
+	.hero img{
+		object-fit: cover;
+	}
+}
+
+
+@keyframes zoom-out{
+	100%{
+		width: 100%;
+	}
+}
+.hero-image1{
+	animation: image1 12s linear infinite;
+}
+.hero-image2{
+	animation: image2 12s linear infinite;
+}
+.hero-image3{
+	animation: image3 12s linear infinite;
+}
+.hero-image4{
+	animation: image4 12s linear infinite;
+}
+
+@keyframes image1{
+	0%{
+		visibility: visible;
+	}
+	25%{
+		visibility: visible;
+	}
+	50%{
+		visibility: hidden;
+	}
+	75%{
+		visibility: hidden;
+	}
+	100%{
+		visibility: hidden;
+	}		
+
+}
+
+@keyframes image2{
+	0%{
+		visibility: hidden;
+	}
+	25%{
+		visibility: hidden;
+	}
+	50%{
+		visibility: visible;
+	}
+	75%{
+		visibility: hidden;
+	}
+	100%{
+		visibility: hidden;
+	}		
+
+}
+
+@keyframes image3{
+	0%{
+		visibility: hidden;
+	}
+	25%{
+		visibility: hidden;
+	}
+	50%{
+		visibility: hidden;
+	}
+	75%{
+		visibility: visible;
+	}
+	100%{
+		visibility: hidden;
+	}		
+
+}
+
+@keyframes image4{
+	0%{
+		visibility: hidden;
+	}
+	25%{
+		visibility: hidden;
+	}
+	50%{
+		visibility: hidden;
+	}
+	75%{
+		visibility: hidden;
+	}
+	100%{
+		visibility: visible;
+	}		
+
+}
+
+		/*---------------------------------------------------------
+		WRITING MEDIA QUERY FOR THE HERO IMAGES
+		----------------------------------------------------------*/ 
+@media screen and (max-width: 700px){
+ 
+ 
+.hero img{
+	object-fit: cover;
+}
+
+}		
+
+		/*---------------------------------------------------------
+		THIS SECTION OF THE CODE STYLES THE NAVIGATON BAR 
+		----------------------------------------------------------*/
+/*#home{
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6));
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+}		  */
+
+nav{
+	width: 100%;
+	height: 60px;
+	background: var(--opaque-dark-2);
+/*	background: var(--secondary-color);*/
+	position: fixed;
+	top: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 40px;
+	z-index: 1;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+	nav.scrolled{
+		background: var(--secondary-color);
+	}
+.logo{
+	color: var(--accent-color);
+	font-size: 25px;
+	font-weight: bold;
+	border: 1px solid var(--primary-color);
+	border-radius: 50%;
+	text-align: center;
+	padding: 6px;
+}
+nav ul{
+	display: inline-flex; gap: 20px;
+	transition: height 0.8s;
+}
+nav ul li{
+/*	position: relative;
+	float: left;*/
+}
+nav ul li a{
+	color: var(--text-color);
+	font-size: 18px;
+	position: relative;
+	/*padding: 20px;
+	display: block;*/
+}
+nav > ul li a::before{
+	content: '';
+	background: var(--accent-color);
+	width: 0;
+	height: 3px;
+	position: absolute;
+	bottom: 0;
+	transition: 1s;
+}
+nav ul li a:active {
+  color: blue;
+}
+nav ul li:hover a::before{
+	width: 100%;
+}
+nav ul li a[href="#donate"]{
+	color: var(--primary-color);
+	background: transparent;
+	border: 3px solid var(--accent-color);
+	padding: 6px 25px;
+	border-radius: 30px;
+	transition: 1s;
+}
+nav ul li a[href="#donate"]:hover{
+	background: var(--accent-color);
+}
+nav ul li:hover a[href="#donate"]:before{
+	width: 0;
+}
+nav ul li ul{
+	display: none;
+	background: var(--secondary-color);
+	padding: 6px 10px;
+	position: absolute;
+	transition: height 0.6s;
+	top: 70%;
+	margin-left: -60px; 
+}
+nav ul li:hover > ul{
+	display: inline-block;
+}
+.about{
+	color: var(--text-color);
+	font-size: 18px;
+}
+
+nav ul li ul li{
+	margin: 20px;
+}
+
+.small-ul li a::before{
+	display: none;
+}
+
+ #menu-icon{
+	font-size: 30px;
+	color: var(--text-color);
+	cursor: pointer;
+	display: none;
+	position: ;
+}
+#menu-close{
+	display: none;
+}
+  
+	
+		/*---------------------------------------------------------
+		WRITING MEDIA QUERY FOR THE NAVIGATION BAR
+		----------------------------------------------------------*/ 
+
+@media screen and (max-width: 899px){
+	nav{
+		position: fixed;
+/*		background: var(--secondary-color);*/
+		padding: 0 30px;
+	}
+	nav > ul{
+		display: none;
+		background: var(--secondary-color);
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 85%;
+		height: 0;
+		gap: 15px;
+		z-index: 6;
+		right: 0;
+		padding: 20px 30px;
+		clip-path: circle(0% at 95.3% 8.5%);
+	}
+	nav > ul.clicked{
+		display: inline-block;
+		height: 100vh;
+		clip-path: circle(140% at 95.3% 8.5%);
+		transition: 1s;
+	}
+	nav > ul li{
+		margin: 30px;
+/*		position: relat;
+        width: 100%;*/ 
+
+	}	
+	 
+
+	#menu-icon{
+		display: block;
+	}
+
+	#menu-close{
+		color: #fff; 
+		z-index: 3; 
+		font-size: 35px; 
+		margin-top: 20px;
+		float: right;
+		cursor: pointer;
+		display: block;
+	}
+
+	.logo{
+		font-size: 20px;
+		cursor: pointer;
+	}
+
+nav ul li ul{
+	background: var(--secondary-color);
+	padding: 6px 10px;
+	position: relative;
+	z-index:;
+/*	width: 100%;*/
+}	
+
+ 
+nav ul li ul li{
+}
+  
+ 
+
+}		
+		/*---------------------------------------------------------
+		THIS SECTION OF THE STYLESHEET STYLES THE HOMEPAGE OF THE WEBSITE
+		----------------------------------------------------------*/  
+.hero-info{
+	width: 100%;
+    height: 120dvh;
+	font-size: 20px;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	position: absolute;
+	background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6));
+	background: linear-gradient(rgba(4, 9, 30, 0.9), rgba(4, 9, 30, 0.9));
+}
+.home-text{
+	width: 70%;
+	position: absolute;
+	top: 20%;
+	left: 10%;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+.hero-info h1{
+	font-family: Imprint MT Shadow;
+	color: 	var();
+	font-size: 40px;
+/*	font-family: lucida calligraphy;*/
+}
+
+.hero-info h1::before{ width: 0 }
+
+.hero-info p{
+
+}
+.hero-info button{
+	color: #fff;
+	background: var(--accent-color);
+	padding: 6px 12px;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	font-size: 20px;
+	border-radius: 30px;
+	width: min(40%, 200px);
+	transition: 1s;
+	font-family: var(--text-font);
+}
+.hero-info button:hover{
+	background: transparent;
+	border: 3px solid var(--accent-color);	
+}
+
+		/*---------------------------------------------------------
+		WRITING MEDIA QUERY FOR THE TEXTS AVAILABLE ON THE HERO SECTION
+		----------------------------------------------------------*/ 
+@media screen and (max-width: 1024px){
+	.hero-info{
+		height: 100vh;
+	}
+
+	 
+/*	.home-text{
+		width: 100%;
+		left: 0;
+		padding: 0 20px;
+	}*/
+/*	.hero-info h1{
+		font-size: 35px;
+	}*/
+}		
+
+@media screen and (max-width: 700px){
+/*	.hero-info{
+		height: 100vh;
+	}
+*/
+	 
+	.home-text{
+		width: 100%;
+		left: 0;
+		padding: 0 20px;
+	}
+	.hero-info h1{
+		font-size: 35px;
+	}
+}		
+
+		/*---------------------------------------------------------
+		THIS SECTION OF THE CODE STYLES THE MISSION AND VISION OF THE COMPANY
+		----------------------------------------------------------*/  
+
+#mission{
+	width: 100%;
+	min-height: 100%;
+	padding: 60px 60px;
+	background: var(--secondary-color);
+	display: flex;
+	justify-content: space-between;
+	gap: 60px;
+}
+.mission, .vision{
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	flex: 1;
+
+}
+ 
+
+.mission .vision, h1{
+	color: var();
+}
+.mission .vision, p{
+	color: var(--text-color);
+}
+
+		/*---------------------------------------------------------
+		WRITING MEDIA QUERY FOR THE MISSION AND VISITION SECTION
+		----------------------------------------------------------*/ 
+@media screen and (max-width: 899px){
+	#mission{
+		flex-direction: column;
+		padding: 60px 20px;
+	}
+}		
+
+		/*---------------------------------------------------------
+		THIS SECTION OF THE CODE STYLES THE ABOUT SECTION THE WEBSITE
+		----------------------------------------------------------*/  
+#about{
+	width: 100%;
+	min-height: 100%;
+	padding: 60px 40px;
+	display: flex;
+	justify-content: space-between;
+	gap: 40px;
+}
+ .about-img{
+ 	flex: 1;
+ }
+ .about-img img{
+ 	width: 100%;
+ 	filter: grayscale(100%);
+ 	transition: 0.6s;
+ }
+ .about-img img:hover{
+ 	filter: grayscale(0);
+ 	transform: scale(1.1);
+ }
+ .about-text{
+ 	flex: 1;
+ 	display: flex;
+ 	flex-direction: column;
+ 	gap: 20px;
+ }
+ #about h1{
+ 	color: var(--secondary-color);
+ }
+ #about p{color: var(--black-color);}
+
+		/*---------------------------------------------------------
+		WRITING MEDIA QUERY FOR THE ABOUT SECTON
+		----------------------------------------------------------*/ 
+@media screen and (max-width: 700px){
+	#about{
+		flex-direction: column;
+		padding: 60px 20px;
+	}
+}		
+
+		/*---------------------------------------------------------
+		THIS SECTION OF THE CODE STYLES THE ACTIVITIES SECTION THE WEBSITE
+		----------------------------------------------------------*/
+
+#activities{
+	width: 100%;
+	min-height: 100%;
+	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('images/image6.jpg') no-repeat center center/cover fixed;
+	padding: 60px 40px;
+}
+.activities{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	align-items: center;
+}
+#activities h3{padding: 0}
+#activities h3::before{width: 0}
+
+.boxes{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+.box{
+	width: 300px;
+	height: 250px;
+	border: 2px solid #ddd;
+	color: var(--accent-color);
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	justify-content: center;
+	padding: 15px;
+	border-radius: 15px;
+}
+.box i{
+	font-size: 25px;
+	color: var(--accent-color);
+}
+.box p{
+	color: #ddd;
+}
+.box h3{
+	color: var(--primary-color);
+}
+
+		/*---------------------------------------------------------
+		WRITING MEDIA QUERY FOR THE ACTIVITIES SECTION FOR SMALL SCREEN DEVICES 
+		----------------------------------------------------------*/ 
+
+
+@media screen and (max-width: 700px){
+	#activities{
+		padding: 60px 10px;
+	}
+	.box{
+		width: 90%;
+		height: 270px;
+	}
+}
+
+@media screen and (max-width: 1024px) and (min-width: 900px){
+	#activities{
+		padding: 60px 30px;
+	}
+	.box{
+		width: 260px;
+		height: 260px;
+	}
+}
+
+@media screen and (max-width: 320px) and (min-width: 100px){
+	.box{
+		width: 96%;
+		height: 300px;
+	}
+}
+
+
+
+		/*---------------------------------------------------------
+		THIS SECTION OF THE CODE STYLES THE RECENT PROGRAMMES SECTION THE WEBSITE
+		----------------------------------------------------------*/
+#programmes{
+	width: 100%;
+	min-height: 100%;
+	padding: 60px 40px;
+	background: var(--secondary-color);
+}
+
+.programmes{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 40px;
+}
+.program-img{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	display: flex;
+	justify-content: center;
+	gap: 3px;
+}
+.program-img a{
+	width: 220px;
+}
+.program-img a img{
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+	border-radius: 30;
+/*	border: 3px solid var(--vs-color-1);*/
+	transition: 0.6s;
+}
+.program-img a img:hover{
+	filter: grayscale(100%);
+	transform: scale(1.1);
+}
+
+
+		/*---------------------------------------------------------
+		WRITING MEDIA QUERY FOR THE PROGRAMMES SECTION
+		----------------------------------------------------------*/ 
+
+
+
+@media screen  and (max-width: 600px){
+	#programmes{
+		padding: 60px 20px;
+	}
+	.program-img a{
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 1000px) and (min-width: 900px){
+	#programmes{
+		padding: 60px 30px;
+	}
+	.program-img a{
+		width: 200px;
+	}
+}
+
+
+
+		/*---------------------------------------------------------
+		THIS SECTION OF THE CODE STYLES OUR TEAM MEMBERS SECTION THE WEBSITE
+		----------------------------------------------------------*/
+
+			#team{
+				width: 100%;
+				min-height: 100%;
+				padding: 60px 40px;
+				background: ;
+
+			}
+			#team h1{
+				color: #000;
+			}
+			#team h3::before{width: 0}
+			.team{
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				gap: 30px;
+				align-items: center;
+			}
+			.team-members{
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 30px;
+				flex-wrap: wrap;
+			}
+			.team-card{
+				width: 45%;
+				height: 220px;
+				border-radius: 6px;
+				background: var(--primary-color);
+				color: #000;
+				display: flex;
+				align-items: center;
+				gap: 50px;
+				padding: 20px 30px;
+				box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.20), 0 8px 20px 0 rgba(0, 0, 0, 0.20);
+			}
+			.team-card img{
+				width: 120px;
+				height: 120px;
+				border-radius: 50%;
+				object-fit: cover;
+			}
+
+			.card-details{
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+			}
+			.card-details span{
+				display: flex;
+				gap: 12px;
+			}
+			.card-details h3{
+				color: var(--accent-color);
+			}
+			.card-details p{
+				color: var(--black-color);
+			}
+			.card-details i{
+				color: var(--primary-color);
+				padding: 8px;
+				background: var(--accent-color);
+				border-radius: 50%;
+				margin-right: 6px;				
+			}
+
+
+
+		/*---------------------------------------------------------
+		WRITING MEDIA QUERY FOR THE TEAM SECTION FOR SMALL SCREEN DEVICES
+		----------------------------------------------------------*/ 
+
+
+           	@media screen and (max-width: 899px) and (min-width: 501px){
+				#team {
+					padding: 60px 20px;
+				}
+				.team-members{
+					width: ;
+					flex-direction: column;
+					
+				}
+				.team-card{
+					width: 70%;
+					gap: 70px;
+					padding: 10px 10px;
+				}
+				.card-details span{
+					gap: 12px;
+				}
+		             .card-details h3{
+            	font-size: 20px;
+            }
+             .team-card img{
+            	width: 120px;
+            	height: 120px;
+            }		
+			}
+
+			@media screen and (max-width: 599px) and (min-width: 502px){
+				.team-card{
+					width: 90%;
+					gap: 50px;
+				}
+			}			
+
+			@media screen and (max-width: 500px) and (min-width: 380px){
+				#team {
+					padding: 60px 30px;
+				}
+				.team-members{
+					width: ;
+					flex-direction: column;
+					
+				}
+				.team-card{
+					width: 100%;
+					gap: 45px;
+					padding: 10px 10px;
+				}
+				.card-details span{
+					gap: 3px;
+				}
+		             .card-details h3{
+            	font-size: 20px;
+            }
+             .team-card img{
+            	width: 120px;
+            	height: 120px;
+            }		
+			}
+
+			@media screen and (max-width: 380px) and (min-width: 320px){
+				#team {
+					padding: 60px 20px;
+					width: 100vw;
+				}
+				.team-members{
+					width: 100%;
+					flex-direction: column;
+					
+				}
+				.team-card{
+					width: 100%;
+					gap: 40px;
+					padding: 10px 15px;
+				}
+				.card-details span{
+					gap: 3px;
+				}
+
+        .card-details h3{
+            	font-size: 16px;
+            }
+            .team-card img{
+            	width: 90px;
+            	height: 90px;
+            }  
+            .card-details i{
+            	padding: 5px;
+            }          	
+			}	        
+
+            @media screen and (max-width: 320px) and (min-width: 275px){
+
+				#team {
+					padding: 60px 10px;
+					width: 100vw;
+				}
+				.team-members{
+					width: 100%;
+					flex-direction: column;
+					
+				}
+				.team-card{
+					width: 100%;
+					gap: 20px;
+					padding: 10px 15px;
+				}
+				.card-details span{
+					gap: 3px;
+				}
+
+        .card-details h3{
+            	font-size: 16px;
+            }
+            .team-card img{
+            	width: 90px;
+            	height: 90px;
+            }  
+            .card-details i{
+            	padding: 5px;
+            }          	
+
+			}
+@media screen and (max-width: 275px) and (min-width: 100px){
+	#team{
+		padding: 60px 6px;
+	}
+	.team-card{
+		width: 100%;
+		flex-direction: column;
+		gap: 6px;
+	}
+	.team-members{
+		gap: 20px;
+	}
+}
+    
+@media screen and (max-width: 1000px) and (min-width: 900px){
+	#team{
+		padding: 60px 30px;
+	}
+	.team-card{
+		width: 48%;
+	}
+	.team-members{
+		gap: 20px;
+	}
+}
+            
+
+
+
+
+.donate{
+	background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/image8.jpg') no-repeat center/cover fixed;
+	width: 100%;
+	min-height: 50vh;
+	padding: 100px 40px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+.donate h1{
+	color: var();
+}
+.donate h1::before{ width: 0 }
+.donate a{
+	background: var(--accent-color);
+	color: var(--text-color);
+	border-radius: 30px;
+	padding: 10px 30px;
+	width: 200px;
+	font-size: 20px;
+	text-align: center;
+}
+
+
+		/*---------------------------------------------------------
+		THIS SECTION OF THE CODE STYLES THE CONTACT SECTION THE WEBSITE
+		----------------------------------------------------------/**/
+
+#contact{
+	width: 100%;
+	min-height: 100%;
+	background: #efefef;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: ;
+	padding: 60px 0;
+}
+.contact{
+	width: 96%;
+	height: 100%;
+	display: flex;
+	padding: 20px 10px;
+	border-radius: 6px;
+/*	box-shadow: 0 0 10px;*/
+	gap: 20px;
+}
+.contact .details{
+	flex: 1;
+	border-top: 4px solid var(--secondary-color);
+	border-bottom: 4px solid var(--secondary-color);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 30px;
+	padding: 20px 15px;
+/*	box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2), 0 12px 20px 0 rgba(0, 0, 0, 0.2);*/
+}
+.details p{
+	color: var(--black-color);
+}
+.details h2{
+	color: var();
+}
+.contact form{
+	flex: 2;
+/* 	box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2), 0 12px 20px 0 rgba(0, 0, 0, 0.2);*/
+	display: flex;
+	flex-direction: column;
+	padding: 20px 15px;
+	align-items: flex-start;
+	border-top: 4px solid var(--secondary-color);
+	border-bottom: 4px solid var(--secondary-color);
+}
+form h3{
+	color: var(--accent-color);
+}
+.contact .row{
+	display: flex;
+	gap: 6px;
+	width: 100%;
+}
+.contact .col{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 8px;
+	width: 100%;
+}
+.contact form input{
+	width: 100%;
+	background: ;
+	border: 1px solid black;
+	height: 30px;
+	font-size: 20px;
+	padding: 10px 6px;
+	outline: none;
+	color: var(--secondary-color);
+}
+.contact form input:focus{
+	background: #ff004f;
+}
+.contact form textarea{
+	width: 100%;
+	height: 100px;
+	outline: none;
+	border: 1px solid var(--secondary-color);
+	padding: 10px 6px;
+	color: #fff;
+	font-size: 20px;
+	outline: none;
+}
+.contact form textarea:focus{
+	background: #ff004f;
+}
+.contact form label{
+	color: ;
+}
+.contact form button{
+	background: var(--accent-color);
+	color: var(--text-color);
+	padding: 6px 12px;
+	width: 40%;
+	margin-top: 10px;
+	border: 1px solid var(--accent-color);
+	font-size: 20px;
+	border-radius: 30px;
+	cursor: pointer;
+}
+form .button{
+	width: 100%;
+	display: flex;
+    justify-content: flex-start;
+}
+.contact .details i{
+	color: var(--primary-color);
+	padding: 8px;
+	background: var(--accent-color);
+	border-radius: 50%;
+	margin-right: 6px;
+}
+
+
+		/*---------------------------------------------------------
+		WRITING MEDIA QUERY FOR THE CONTACT SECTION
+		----------------------------------------------------------*/ 
+
+
+
+@media screen and (max-width: 679px){
+
+.contact{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	align-items: center;
+}
+.contact form{
+	flex: 1;
+	width: 90%;
+}
+
+.contact .row{
+	display: flex;
+    flex-direction: column;
+}
+.contact .col{
+	display: flex;
+	flex-direction: column;
+}
+.contact form input{
+	width: 100%
+}
+.contact form textarea{
+	width: 100%;
+}
+.contact form button{
+	width: 100%;
+}
+.contact .details{
+	flex: 1;
+	width: 90%;
+}
+
+
+}
+
+@media screen and (max-width: 926px) and (min-width: 680px) {
+	.contact{
+		flex-direction: column;
+	}
+}
+
+
+		/*---------------------------------------------------------
+		WRITING MEDIA QUERY FOR THE FOOTER SECTION OF THE WEBSITE
+		----------------------------------------------------------*/ 
+
+
+
+footer{
+	width: 100%;
+	min-height: 100%; 
+	padding: 60px 60px;
+	background: var(--secondary-color);
+}
+footer h3{color: var(--text-color);}
+
+.footer{
+	display: flex;
+}
+.footer-small-col{
+	display: flex;
+	flex: 1;
+}
+.footer-col{
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+footer p, a{
+	color: #8a8a8a;
+}
+footer li{
+	display: block;
+	margin: 15px;
+}
+
+.newsletter{
+	display: flex;
+}
+.newsletter > input{
+	border: none;
+	outline: none;
+	height: 25px;
+	padding: 10px;
+	border-radius: 20px 0 0 20px;
+	width: 70%;
+}
+.newsletter > button{
+	border: none;
+	outline: none;
+	height: 25px;
+	background: var(--accent-color);
+	color: #FFF;
+	border-radius: 0 20px 20px 0;
+	padding: 10px 20px;
+	font-size: 20px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	margin-left: -3px;
+}
+.newsletter > button:hover{
+	background: transparent;
+	border: 2px solid var(--accent-color);
+}
+
+
+		/*---------------------------------------------------------
+		WRITING MEDIA QUERY FOR THE FOOTER SECTION
+		----------------------------------------------------------*/ 
+
+
+
+@media screen and (max-width: 899px) and (min-width: 600px){
+	.footer-small-col{
+		flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 599px){
+	.footer{
+	   flex-direction: column;
+	   flex: ;
+	}
+	.footer-small-col{
+		flex-direction: column;
+	}
+
+}
+
