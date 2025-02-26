@@ -1,8 +1,8 @@
-		const logo = document.querySelector('.logo')
-		const body = document.getElementsByTagName('body')[0]
-		logo.addEventListener('click', ()=>{
-			body.classList.toggle('switch-color')
-		})
+		// const logo = document.querySelector('.logo')
+		// const body = document.getElementsByTagName('body')[0]
+		// logo.addEventListener('click', ()=>{
+		// 	body.classList.toggle('switch-color')
+		// })
 
 
 // WRITING A SCRIPT FOR THE BACK TO TOP BUTTON

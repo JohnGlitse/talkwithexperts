@@ -4,6 +4,7 @@
 	box-sizing: border-box;
 	text-decoration: none;
 	list-style-type: none;
+	font-family: Poppins-Light;
 }
 
 html{
@@ -45,7 +46,7 @@ body h3::before{
 	bottom: 0;
 }
 
-:root{
+/*:root{
 	--primary-color: #fff;
 	--secondary-color: #04091e;
 	--accent-color: #002e63;
@@ -55,14 +56,56 @@ body h3::before{
 	--opaque-dark-2: rgba(4, 9, 30, 0.2);
 	--text-font: Rockwell;
 }
+*/
 
-.switch-color{
+
+
+
+:root{
+	--primary-color: #e5e5e5;
+	--secondary-color: #023047;
+/*	--accent-color: #fca311;*/
+	--accent-color: #ffb703;
+
+    --text-color: #fff;
+    --black-color: #000;
+	--opaque-dark-2: rgba(2, 62, 138, 0.5);
+	--text-font: Rockwell;
+}
+
+
+
+
+/*.switch-color{
 	--primary-color: #efefef;
 	--secondary-color: #262626;
 	--accent-color: #ddd2a5;
-	/*--vs-color-1: red;*/
+ 
 	--text-color: #fff;
 	--opaque-dark-2: rgba(4, 9, 30, 0.2);
+}*/
+
+
+/*DEFINING FONTS FAMILIES TO BE USE THROUGHT THE APP*/
+
+@font-face{
+	src: url(fonts/Poppins-Medium.ttf);
+	font-family: Poppins-Medium;
+}
+
+@font-face{
+	src: url(fonts/Poppins-Regular.ttf);
+	font-family: Poppins-Regular;
+}
+
+@font-face{
+	src: url(fonts/Poppins-Thin.ttf);
+	font-family: Poppins-Thin;
+}
+
+@font-face{
+	src: url(fonts/Poppins-Light.ttf);
+	font-family: Poppins-Light;
 }
 
 		/*---------------------------------------------------------
@@ -71,7 +114,8 @@ body h3::before{
 .hero{
 	width: 100%;
 	height: 120dvh;
-	background: linear-gradient(rgba(4, 9, 30, 0.4), rgba(4, 9, 30, 0.4));
+/*	background: linear-gradient(rgba(4, 9, 30, 0.4), rgba(4, 9, 30, 0.4));*/
+    background: linear-gradient(rgba(2, 48, 71, 0.4), rgba(2, 48, 71, 0.4));
 }
 .hero-image1, .hero-image2, .hero-image3, .hero-image4{
 	width: 100%;
@@ -225,30 +269,35 @@ body h3::before{
 
 nav{
 	width: 100%;
-	height: 60px;
+	height: 80px;
 	background: var(--opaque-dark-2);
-/*	background: var(--secondary-color);*/
+	background: rgba(255, 255, 255, 0.8);
 	position: fixed;
 	top: 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 40px;
-	z-index: 1;
+	padding:  0 80px;
+	z-index: 4;
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 	nav.scrolled{
 		background: var(--secondary-color);
+		background: white;
 	}
+
 .logo{
-	color: var(--accent-color);
-	font-size: 25px;
-	font-weight: bold;
-	border: 1px solid var(--primary-color);
-	border-radius: 50%;
-	text-align: center;
-	padding: 6px;
+	width: 100px;
+	height: 100px;
+ 	position: relative;
+    display: flex; align-items: center; justify-content: center;
 }
+
+.logo img{
+	position: absolute;
+	object-fit: cover;
+}
+
 nav ul{
 	display: inline-flex; gap: 20px;
 	transition: height 0.8s;
@@ -259,6 +308,7 @@ nav ul li{
 }
 nav ul li a{
 	color: var(--text-color);
+	color: var(--secondary-color);
 	font-size: 18px;
 	position: relative;
 	/*padding: 20px;
@@ -280,7 +330,7 @@ nav ul li:hover a::before{
 	width: 100%;
 }
 nav ul li a[href="#donate"]{
-	color: var(--primary-color);
+	color: var(--secondary-color);
 	background: transparent;
 	border: 3px solid var(--accent-color);
 	padding: 6px 25px;
@@ -320,10 +370,11 @@ nav ul li ul li{
 
  #menu-icon{
 	font-size: 30px;
-	color: var(--text-color);
+	color: var(--secondary-color);
 	cursor: pointer;
 	display: none;
 	position: ;
+
 }
 #menu-close{
 	display: none;
@@ -338,7 +389,8 @@ nav ul li ul li{
 	nav{
 		position: fixed;
 /*		background: var(--secondary-color);*/
-		padding: 0 30px;
+		padding: 0 20px;
+		height: 60px;
 	}
 	nav > ul{
 		display: none;
@@ -366,6 +418,14 @@ nav ul li ul li{
         width: 100%;*/ 
 
 	}	
+
+	nav ul li a{
+		color: var(--primary-color);
+	}
+
+	nav ul li a[href="#donate"]{
+		color: var(--primary-color);
+	}
 	 
 
 	#menu-icon{
@@ -382,10 +442,18 @@ nav ul li ul li{
 		display: block;
 	}
 
-	.logo{
-		font-size: 20px;
-		cursor: pointer;
-	}
+.logo{
+	width: 100px;
+	height: 100px;
+ 	position: relative;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 5;
+}
+
+.logo img{
+	position: absolute;
+	object-fit: contain;
+}
 
 nav ul li ul{
 	background: var(--secondary-color);
@@ -408,26 +476,27 @@ nav ul li ul li{
 .hero-info{
 	width: 100%;
     height: 120dvh;
+    padding-left: 80px;
 	font-size: 20px;
 	color: #fff;
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
 	position: absolute;
-	background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6));
-	background: linear-gradient(rgba(4, 9, 30, 0.9), rgba(4, 9, 30, 0.9));
+/*	background: linear-gradient(rgba(4, 9, 30, 0.9), rgba(4, 9, 30, 0.9));*/
+    background: linear-gradient(rgba(2, 48, 71, 0.8), rgba(2, 48, 71, 0.8));
 }
 .home-text{
-	width: 70%;
+	width: 60%;
 	position: absolute;
 	top: 20%;
-	left: 10%;
+/*	left: 10%;*/
 	display: flex;
 	flex-direction: column;
 	gap: 30px;
 }
 .hero-info h1{
-	font-family: Imprint MT Shadow;
+/*	font-family: Imprint MT Shadow;*/
 	color: 	var();
 	font-size: 40px;
 /*	font-family: lucida calligraphy;*/
@@ -498,7 +567,7 @@ nav ul li ul li{
 #mission{
 	width: 100%;
 	min-height: 100%;
-	padding: 60px 60px;
+	padding: 80px 80px;
 	background: var(--secondary-color);
 	display: flex;
 	justify-content: space-between;
@@ -507,7 +576,7 @@ nav ul li ul li{
 .mission, .vision{
 	display: flex;
 	flex-direction: column;
-	gap: 30px;
+	gap: 50px;
 	flex: 1;
 
 }
@@ -536,10 +605,12 @@ nav ul li ul li{
 #about{
 	width: 100%;
 	min-height: 100%;
-	padding: 60px 40px;
+	padding: 80px 80px;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	gap: 40px;
+	background: var(--primary-color);
 }
  .about-img{
  	flex: 1;
@@ -551,13 +622,13 @@ nav ul li ul li{
  }
  .about-img img:hover{
  	filter: grayscale(0);
- 	transform: scale(1.1);
+ 	transform: scale(1.05);
  }
  .about-text{
  	flex: 1;
  	display: flex;
  	flex-direction: column;
- 	gap: 20px;
+ 	gap: 40px;
  }
  #about h1{
  	color: var(--secondary-color);
@@ -582,7 +653,7 @@ nav ul li ul li{
 	width: 100%;
 	min-height: 100%;
 	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('images/image6.jpg') no-repeat center center/cover fixed;
-	padding: 60px 40px;
+	padding: 80px 80px;
 }
 .activities{
 	width: 100%;
@@ -591,18 +662,30 @@ nav ul li ul li{
 	gap: 40px;
 	align-items: center;
 }
+
+
+
 #activities h3{padding: 0}
 #activities h3::before{width: 0}
 
-.boxes{
+/*.boxes{
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
 	gap: 20px;
+}*/
+
+.boxes{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 20px;
 }
+
 .box{
-	width: 300px;
-	height: 250px;
+	/*width: 300px;
+	height: 250px;*/
 	border: 2px solid #ddd;
 	color: var(--accent-color);
 	display: flex;
@@ -628,32 +711,59 @@ nav ul li ul li{
 		----------------------------------------------------------*/ 
 
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 700px) and (min-width: 401px){
 	#activities{
-		padding: 60px 10px;
+		padding: 60px 40px;
 	}
-	.box{
-		width: 90%;
-		height: 270px;
-	}
+	.boxes{
+			display: grid;
+			grid-template-columns: repeat(1, 1fr);
+			justify-content: center;
+			gap: 20px;
 }
+	
+}
+
+
+ 
+
+@media screen and (max-width: 400px) and (min-width: 321px){
+	#activities{
+		padding: 60px 30px;
+	}
+	.boxes{
+			display: grid;
+			grid-template-columns: repeat(1, 1fr);
+			justify-content: center;
+			gap: 14px;
+}
+
+}
+
+ 
+
+
 
 @media screen and (max-width: 1024px) and (min-width: 900px){
 	#activities{
 		padding: 60px 30px;
 	}
-	.box{
-		width: 260px;
-		height: 260px;
-	}
+ 
 }
 
 @media screen and (max-width: 320px) and (min-width: 100px){
-	.box{
-		width: 96%;
-		height: 300px;
+	#activities{
+		padding: 40px 20px;
 	}
-}
+
+	.boxes{
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		justify-content: center;
+		gap: 14px;
+	}
+
+ }
 
 
 
@@ -663,7 +773,7 @@ nav ul li ul li{
 #programmes{
 	width: 100%;
 	min-height: 100%;
-	padding: 60px 40px;
+	padding: 80px 80px;
 	background: var(--secondary-color);
 }
 
@@ -674,20 +784,33 @@ nav ul li ul li{
 	align-items: center;
 	gap: 40px;
 }
-.program-img{
+
+ 
+/*.program-img{
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
 	display: flex;
 	justify-content: center;
 	gap: 3px;
+}*/
+
+.program-img{
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	justify-content: center;
+	gap: 3px;
 }
+
+
 .program-img a{
-	width: 220px;
+/*	width: 220px;*/
+    height: 200px;
 }
 .program-img a img{
 	width: 100%;
-	height: 180px;
+	height: 200px;
 	object-fit: cover;
 	border-radius: 30;
 /*	border: 3px solid var(--vs-color-1);*/
@@ -704,8 +827,32 @@ nav ul li ul li{
 		----------------------------------------------------------*/ 
 
 
+@media screen and (max-width: 700px) and (min-width: 401px){
+	#programmes{
+		padding: 60px 20px;
+	}
 
-@media screen  and (max-width: 600px){
+	.program-img{
+		grid-template-columns: repeat(2, 1fr);
+	}
+ 
+	
+}
+
+@media screen and (max-width: 400px) and (min-width: 200px){
+	#programmes{
+		padding: 60px 20px;
+	}
+
+	.program-img{
+		grid-template-columns: repeat(1, 1fr);
+	}
+ 
+	
+}
+
+
+/*@media screen  and (max-width: 600px){
 	#programmes{
 		padding: 60px 20px;
 	}
@@ -721,7 +868,7 @@ nav ul li ul li{
 	.program-img a{
 		width: 200px;
 	}
-}
+}*/
 
 
 
@@ -732,7 +879,7 @@ nav ul li ul li{
 			#team{
 				width: 100%;
 				min-height: 100%;
-				padding: 60px 40px;
+				padding: 80px 80px;
 				background: ;
 
 			}
@@ -960,7 +1107,7 @@ nav ul li ul li{
 	background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/image8.jpg') no-repeat center/cover fixed;
 	width: 100%;
 	min-height: 50vh;
-	padding: 100px 40px;
+	padding: 80px 80px;
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
@@ -993,7 +1140,7 @@ nav ul li ul li{
 	justify-content: center;
 	align-items: center;
 	background: ;
-	padding: 60px 0;
+	padding: 80px 80px;
 }
 .contact{
 	width: 96%;
@@ -1107,6 +1254,9 @@ form .button{
 
 
 @media screen and (max-width: 679px){
+	#contact{
+		padding: 60px 30px;
+	}
 
 .contact{
 	display: flex;
@@ -1150,6 +1300,12 @@ form .button{
 	}
 }
 
+@media screen and (max-width: 400px) and (min-width: 200px){
+	#contact{
+		padding: 60px 20px;
+	}
+}
+
 
 		/*---------------------------------------------------------
 		WRITING MEDIA QUERY FOR THE FOOTER SECTION OF THE WEBSITE
@@ -1160,7 +1316,7 @@ form .button{
 footer{
 	width: 100%;
 	min-height: 100%; 
-	padding: 60px 60px;
+	padding: 80px 80px;
 	background: var(--secondary-color);
 }
 footer h3{color: var(--text-color);}
@@ -1224,12 +1380,18 @@ footer li{
 
 
 @media screen and (max-width: 899px) and (min-width: 600px){
+	#footer{
+		padding: 60px 40px;
+	}
 	.footer-small-col{
 		flex-direction: column;
 	}
 }
 
 @media screen and (max-width: 599px){
+	#footer{
+		padding: 60px 30px;
+	}
 	.footer{
 	   flex-direction: column;
 	   flex: ;
