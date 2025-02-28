@@ -37,7 +37,7 @@
 
 	    <div class="donate">
 	    	<h1>
-	    		Best place to stay. Book your space <br>now!
+	    		Best place to stay. Book your space now!
 	    	</h1>
 	    	<a href="#donate">Donate Now</a>
 	    </div>
@@ -50,12 +50,24 @@
 			<div class="about-text">
 				<h1>Our History</h1>
 				<p>
-					Abide with me fast falls the evening tide, the darkness deepens Lord with me abide.
-					And when other helpers fail and comfort flee, help of the helpless Lord abide with me.
-					And I need thy prescense every passing hour, what but thy grace can foil the tempers power.
-					Who like thy self, my guide and stay can be, help of the helpless Lord abide with me.
-					And hold thou thy cross before my closing eye, shine through the gloom and point me to the sky. 
-					Heavens morning breaks and earth vains comfort flee, in life in death o Lord abide with me.					
+					Lead Connect Global is a non-governmental organization and humanitarian initiative that was 
+					established on the principle that everyone deserves a right to equality. As we are all created 
+					equally, we all deserve access to information and opportunity. This will, in return, give us 
+					options to live a happy and better life. 
+
+					We believe that by working together, we can reduce 
+					hardship, create jobs, change lives, develop talents, provide education, build an egalitarian 
+					society, nurture good leaders, organize entrepreneurship seminars and mentorship, and 
+					positively impact the lives of individuals involved, since this will, in return, help individuals 
+					develop a positive mindset to create a better future. This foundation was created by youth and 
+					is for all, irrespective of being youth or elderly. With this, we say that we are all responsible 
+					for the change we want to see in the world, and it starts with us impacting the lives of those 
+					around us. We want to be intentional, deliberate, and impactful.
+					We want to create platforms for engagement
+					We want to create platforms for information sharing 
+					We want to bring international best practices to our communities.
+					We want to shape the future leaders to be able to make calculated decisions, to be stronger and 
+					better than we are. They must be more innovative and creative					
 				</p>				
 			</div>
 		</div>  
@@ -331,12 +343,14 @@
 .donate{
 	background: linear-gradient(rgba(2, 48, 71, 0.4), rgba(2, 48, 71, 0.4)), url('images/image8.jpg') no-repeat center/cover fixed;
 	width: 100%;
-	min-height: 50vh;
+	min-height: 70vh;
 	padding: 100px 80px;
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
+	justify-content: center;
 }
+
 
 
 #topIcon{
@@ -413,29 +427,7 @@
 			#about{
 				margin-top: 60px;
 			}
-/*			#testimonies{
-				min-height: 100%;
-				background: var(--secondary-color);
-		    	width: 100%;
-		    	padding: 60px 40px;
-		    	display: flex;
-		    	flex-direction: column;
-		    	justify-content: center;
-		    	align-items: center;
-		    	gap: 30px;
-			}
-			.testimonies{
-				width: 90%;
-				display: flex;
-				overflow: hidden;
-				gap: 20px;
-				position: relative;
-			}
-			.slides{
-				width: 100%;
-				display: flex;
-				gap: 40px;
-			}*/
+ 
 			.slide{
                 min-width: 100%;
 				background: #fff;
@@ -450,11 +442,23 @@
 /*				box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2), 0 12px 20px 0 rgba(0, 0, 0, 0.2);*/
 			}
 			@media(max-width: 400px){
+				#donate{
+					padding: 60px 30px;
+
+				}
 				 .slide{
 				 	padding: 10px;
 				 }
 			}
 
+
+@media screen and (max-width: 800px){
+	.donate{
+		padding: 60px 20px;
+	}
+
+
+}
 
 			.slide p{
 				color: var(--black-color);
