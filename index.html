@@ -142,7 +142,7 @@
             	<ul>
             		<i class="fas fa-times" id="menu-close"></i>
             		<li class="li"><a href="">Home</a></li>
-            		<li class="about"><a href="#">About +</a>
+            		<li class="about"><a href="">About +</a>
             			<!-- <i class="fas fa-chevron-down" style="font-size: 15px; color: #fff;"> -->
             			<ul>
             				<li class="li">About </li>
@@ -268,11 +268,16 @@
 			</div>
 			<div class="about-text">
 				<h1>Our History</h1>
+				<div class="display-text">
+				<input type="checkbox" id="textbox" name="">
 				<p>
 					Lead Connect Global is a non-governmental organization and humanitarian initiative that was 
 					established on the principle that everyone deserves a right to equality. As we are all created 
 					equally, we all deserve access to information and opportunity. This will, in return, give us 
-					options to live a happy and better life. We believe that by working together, we can reduce 
+					options to live a happy and better life. 
+				 </p>
+					<p class="content">
+					We believe that by working together, we can reduce 
 					hardship, create jobs, change lives, develop talents, provide education, build an egalitarian 
 					society, nurture good leaders, organize entrepreneurship seminars and mentorship, and 
 					positively impact the lives of individuals involved, since this will, in return, help individuals 
@@ -284,8 +289,13 @@
 					We want to create platforms for information sharing 
 					We want to bring international best practices to our communities.
 					We want to shape the future leaders to be able to make calculated decisions, to be stronger and 
-					better than we are. They must be more innovative and creative			
-				</p>				
+					better than we are. They must be more innovative and creative
+					<br><br>
+					<label for="textbox" class="showless">Read less</label>
+					</p>			
+				 
+				<label for="textbox">Read more</label>	
+				</div>			
 			</div>
 		</div>
 
@@ -296,7 +306,7 @@
 		<div id="programmes">
 			<div class="programmes">
 				<h1>Recent Pragrammes</h1>
-				<div class="program-img">
+			<!-- 	<div class="program-img">
 					<a href="#programmes"><img src="images/image10.jpg"></a>
 					<a href="#programmes"><img src="images/image9.jpg"></a>
 					<a href="#programmes"><img src="images/image8.jpg"></a>
@@ -305,9 +315,44 @@
 					<a href="#programmes"><img src="images/image5.jpg"></a>
 					<a href="#programmes"><img src="images/image4.jpg"></a>
 					<a href="#programmes"><img src="images/image3.jpg"></a>
+				</div> -->
+
+
+		<!-- THIS PART OF THE GALLEREY ONLY SHOW ON SMALL SCREEN DEVICES -->
+
+			<!-- <div id="programmes">
+			<div class="programmes">
+				<h1>Recent Pragrammes</h1> -->
+
+				<div class="images-container">
+				<input type="checkbox" id="img-check" name="">
+				<div class="program-img">
+					<a href="#programmes"><img src="images/image10.jpg"></a>
+					<a href="#programmes"><img src="images/image9.jpg"></a>
+					<a href="#programmes"><img src="images/image8.jpg"></a>
+					<a href="#programmes"><img src="images/image7.jpg"></a>
 				</div>
+				
+					<div class="content">
+					 <img src="images/image6.jpg"> 
+					 <img src="images/image5.jpg"> 
+					 <img src="images/image4.jpg"> 
+					 <img src="images/image3.jpg"> 
+					 <label for="img-check">View less</label>
+					</div>
+				<label for="img-check" id="viewmore">View more</label>
+				</div>
+
+		<!-- 	</div>
+		</div> -->				
+
+
+
 			</div>
 		</div>
+
+
+
 
 
 	    <!---------------------------------------------------------
