@@ -1099,13 +1099,16 @@ nav ul li ul li{
 				display: flex;
 				flex-direction: column;
 				gap: 10px;
-			}
+				justify-content: flex-start;
+				text-align: left;
+ 			}
 			.card-details span{
 				display: flex;
 				gap: 12px;
 			}
 			.card-details h3{
 				color: var(--accent-color);
+				text-align: left;
 			}
 			.card-details p{
 				color: var(--black-color);
