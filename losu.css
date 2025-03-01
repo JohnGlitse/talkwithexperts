@@ -660,6 +660,7 @@ nav ul li ul li{
  	display: flex;
  	flex-direction: column;
  	gap: 40px;
+ 	justify-content: flex-start;
  }
 
  #about h1{
@@ -933,6 +934,11 @@ nav ul li ul li{
 /*	height: 200px;*/
 	object-fit: cover;
 	aspect-ratio: 1/0.8;
+	transition: 0.6s;
+}
+#programmes .content img:hover{
+	filter: grayscale(100%);
+	transform: scale(1.1);
 }
 
 #img-check{
